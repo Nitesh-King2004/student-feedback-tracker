@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performance Report</title>
+</head>
+<body>
+    <h1>Performance Report</h1>
+
+    <h2>Marks:</h2>
+    <ul>
+        {% for mark in marks %}
+            <li>{{ mark.student.name }} - {{ mark.subject }}: {{ mark.score }}</li>
+        {% empty %}
+            <li>No marks available.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Feedback:</h2>
+    <ul>
+        {% for fb in feedbacks %}
+            <li>{{ fb.student.name }} - {{ fb.comments }}</li>
+        {% empty %}
+            <li>No feedback available.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
